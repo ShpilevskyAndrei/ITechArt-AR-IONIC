@@ -1,0 +1,62 @@
+<!--<ion-header class="achievements__header" [translucent]="true">-->
+<!--  <ion-toolbar>-->
+<!--    <ion-buttons slot="start">-->
+<!--      <ion-menu-button auto-hide="false">-->
+<!--        <ion-icon name="arrow-back" routerLink="../main"></ion-icon>-->
+<!--      </ion-menu-button>-->
+<!--    </ion-buttons>-->
+<!--    <ion-title class="achievements__header__title">-->
+<!--      <span class="achievements__header__title__text">-->
+<!--        Achievements-->
+<!--      </span>-->
+<!--    </ion-title>-->
+<!--    <ion-buttons slot="end">-->
+<!--      <ion-menu-button auto-hide="false" style="visibility: hidden">-->
+<!--      </ion-menu-button>-->
+<!--    </ion-buttons>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
+
+<header style="background-color: white">
+  <ion-icon name="arrow-back" routerLink="../main" style="margin: 10px; width: 16px; color: black"></ion-icon>
+</header>
+
+<ion-content class="achievements__content">
+  <div class="achievements__content__statistics">
+    <p class="achievements__content__statistics__title">Statistics</p>
+    <div class="achievements__content__statistics__blocks">
+      <div class="achievements__content__statistics__blocks__item">
+        <p class="achievements__content__statistics__blocks__item__subtitle">Today I got</p>
+        <p class="achievements__content__statistics__blocks__item__title">{{ questsCountToday }} Chests</p>
+      </div>
+      <div class="achievements__content__statistics__blocks__item">
+        <p class="achievements__content__statistics__blocks__item__subtitle">Overall I got</p>
+        <p class="achievements__content__statistics__blocks__item__title">{{ questsCountOverall }} Chests</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="achievements__content__achievements">
+    <p class="achievements__content__achievements__title">Achievements</p>
+
+    <ng-container *ngFor="let achievement of achievements">
+
+    <div class="achievements__content__achievements__element">
+      <div class="achievements__content__achievements__element__step">
+        <span class="achievements__content__achievements__element__step__circle"></span>
+        <span class="achievements__content__achievements__element__step__line"
+        *ngIf="!isLastAchievement(achievement)"></span>
+      </div>
+      <span class="achievements__content__achievements__element__arrow"></span>
+      <span class="achievements__content__achievements__element__text">
+        {{ getFormattedDate(achievement) }}, I got:
+        <b>
+          {{ achievement.count }} Chests
+        </b>
+      </span>
+    </div>
+
+    </ng-container>
+  </div>
+
+</ion-content>

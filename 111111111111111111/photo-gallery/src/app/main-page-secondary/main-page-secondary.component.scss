@@ -1,0 +1,70 @@
+.main-page-secondary__content {
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70.2%;
+    &__item {
+      z-index: -1;
+      width: 100%;
+      height: 110%;
+      object-fit: cover;
+    }
+  }
+  &__nav {
+    position: fixed;
+    bottom: 0;
+    height: 29.8%;
+    min-height: 242px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEEEEE;
+    border-radius: 20px 20px 0 0;
+    &__title {
+      margin: 0 0 24px 0;
+      text-align: center;
+      width: 80%;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      color: black;
+    }
+    &__camera-btn {
+      padding: 14px 20px;
+      width: 91.4%;
+      border-radius: 8px;
+      background-color: #007AFF;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.5px;
+    }
+    &__achievements-btn {
+      margin-top: 10px;
+      padding: 14px 20px;
+      width: 91.4%;
+      border-radius: 8px;
+      background-color: lightgrey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.5px;
+      color: black;
+    }
+  }
+}

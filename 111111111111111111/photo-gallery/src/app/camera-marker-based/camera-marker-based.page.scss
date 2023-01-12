@@ -1,0 +1,114 @@
+.camera-marker {
+  //HEADER
+  &__header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 56px;
+    max-height: 56px;
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    z-index: 999;
+    color: white;
+    &__title {
+      text-align: center;
+      opacity: 1!important;
+      display: flex;
+      align-items: center;
+      &__text {
+        font-size: 18px;
+        opacity: 1!important;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+    &__account-image {
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.search-container {
+  width: 100%;
+  position: fixed;
+  top: 13.5%;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__help {
+    max-width: 90%;
+    &__text {
+      border-radius: 6px;
+      background-color: rgba(0,0,0,0.5);
+      animation: smoothAppearance 0.5s forwards;
+      font-size: 16px;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 12px 20px;
+      margin: 0;
+    }
+  }
+  &__icon {
+    margin-top: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: grey;
+    padding: 15px;
+    background-color: rgba(255,255,255, 0.7);
+    border: 2px solid grey;
+    cursor: pointer;
+  }
+}
+
+.open-gift-button {
+  width: 90%;
+  padding: 14px 20px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  z-index: 8;
+  position: absolute;
+  bottom: 64px;
+  left: 5%;
+  &__disabled {
+    opacity: 0.4;
+  }
+}
+
+.congrats-container {
+  position: absolute;
+  width: 100%;
+  min-height: 56%;
+  max-height: 100%;
+  animation: smoothAppearance 0.5s forwards;
+  z-index: 9;
+}
+
+@keyframes smoothAppearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.congrats-closing {
+  animation: smoothDisappearance 0.5s forwards;
+}
+
+@keyframes smoothDisappearance {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

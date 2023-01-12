@@ -1,0 +1,47 @@
+<header class="camera-marker__header">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false">
+        <ion-icon name="arrow-back" style="width: 16px; cursor: pointer" routerLink="../main"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title class="camera-marker__header__title">
+      <span class="camera-marker__header__title__text">
+        Find a Giftbox
+      </span>
+    </ion-title>
+  <div style="display: flex; align-items: center">
+    <span style="font-size: 18px; margin-right: 10px; line-height: 20px;">
+      {{ questsCountToday | async }}/{{ questsCountOverall | async }}
+    </span>
+  </div>
+</header>
+
+<div class="search-container">
+  <div class="search-container__help">
+    <p *ngIf="!isSuccessMessage" class="search-container__help__text">
+      Turn around your camera, once you find something, tap <b>"Open the gift"</b> button
+    </p>
+    <p *ngIf="isSuccessMessage" class="search-container__help__text">
+      Great!
+    </p>
+  </div>
+</div>
+
+<button
+  class="open-gift-button"
+  (click)="isCongrats = !isCongrats; createNewDoneQuestInfo(); isSuccessMessage = !isSuccessMessage"
+  [disabled]="isButtonDisabled"
+  [class]="isButtonDisabled ? 'open-gift-button__disabled': ''">
+  Open the gift
+</button>
+
+<app-congrats
+  class="congrats-container"
+  *ngIf="isCongrats"
+  (newItemEvent)="closeModal($event)"
+  [class]="isCongratsClosing ? 'congrats-closing': ''"
+></app-congrats>
+
+<ion-content>
+  <iframe src="/assets/camera-marker-based-scene.html"></iframe>
+</ion-content>
